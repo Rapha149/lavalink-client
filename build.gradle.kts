@@ -30,7 +30,7 @@ buildscript {
 val (gitVersion, release) = versionFromGit()
 logger.lifecycle("Version: $gitVersion (release: $release)")
 
-group = "dev.arbjerg"
+group = "de.rapha149"
 version = gitVersion
 val archivesBaseName = "lavalink-client"
 

@@ -30,12 +30,13 @@ class SearchResult(result: LoadResult.SearchResult) : LavalinkLoadResult() {
     val tracks = result.data.tracks.map { it.toCustom() }
 }
 
-internal fun ProtocolException.toCustom() = TrackException(message, severity, cause)
+internal fun ProtocolException.toCustom() = TrackException(message, severity, cause, causeStackTrace)
 
 data class TrackException(
     val message: String?,
     val severity: ProtocolException.Severity,
-    val cause: String
+    val cause: String,
+    val causeStackTrace: String
 )
 
 class LoadFailed(result: LoadResult.LoadFailed) : LavalinkLoadResult() {
